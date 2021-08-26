@@ -1,0 +1,15 @@
+function move() {
+  var elem = document.getElementById("myBar");   
+  var width = 0;
+  var id = setInterval(frame, 43200000); // every 12 hours
+  var time = 8553600000; //99 days start September 3rd
+  function frame() {
+    if (width >= time) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = (100*width)/time + '%'; 
+      elem.innerHTML = Math.round((100*width)/time)  + '%';
+    }
+  }
+}
